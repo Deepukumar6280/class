@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+class demo
+{public:
+	void sum(int a)
+	{
+		cout<<"\none argument";
+	}
+	void sum(int a,int b)
+	{
+		cout<<"\n two arguent";
+	}
+	void sum(double a,double b)
+	{
+		cout<<"\ntwo double args";
+	}
+};
+main()
+{
+	int a=10,b=20;
+	double x=2.34,y=12.34;
+	demo d;
+	d.sum(a);
+	d.sum(x,y);
+	d.sum(a,b);
+}
