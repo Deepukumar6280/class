@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+class Publication:
+    def __init__(self):
+        self.title = ""
+        self.price = 0.0
+
+    def getdata(self):
+        self.title = input("Enter the title: ")
+        self.price = float(input("Enter the price: "))
+
+    def putdata(self):
+        print("Title:", self.title)
+        print("Price:", self.price)
+
+
+class Book(Publication):
+    def __init__(self):
+        super().__init__()
+        self.page_count = 0
+
+    def getdata(self):
+        super().getdata()
+        self.page_count = int(input("Enter the page count: "))
+
+    def putdata(self):
+        super().putdata()
+        print("Page Count:", self.page_count)
+
+
+class Tape(Book):
+    def __init__(self):
+        super().__init__()
+        self.playing_time = 0.0
+
+    def getdata(self):
+        super().getdata()
+        self.playing_time = float(input("Enter the playing time in minutes: "))
+
+    def putdata(self):
+        super().putdata()
+        print("Playing Time (minutes):", self.playing_time)
+
+
+def main():
+    book = Book()
+    tape = Tape()
+
+    print("Enter book details:")
+    book.getdata()
+
+    print("\nEnter tape details:")
+    tape.getdata()
+
+    print("\nBook details:")
+    book.putdata()
+
+    print("\nTape details:")
+    tape.putdata()
+
+
+if __name__ == "__main__":
+    main()
